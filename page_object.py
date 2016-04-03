@@ -16,6 +16,9 @@ class Page(object):
 		into one useful abstraction.
 		'''
 
+		# To include later:
+		#	enhance with "find_elements" so greater generalize function
+
 		if locator == 'id':
 			return self.browser.find_element_by_id(locatee)
 		elif locator == 'name':
@@ -29,6 +32,9 @@ class Page(object):
 		'''
 		Adds custom wait functionality to Selenium's built-in
 		click function. Defaulting to 10 second timeout.
+
+		Note: function assumes click should advance browser page,
+		ie. change the url.
 		'''
 
 		base_url = self.browser.current_url
